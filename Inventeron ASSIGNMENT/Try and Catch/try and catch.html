@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Try Catch Example</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#cfc6c6;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    width:350px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+h2{
+    margin-bottom:25px;
+}
+
+input{
+    width:90%;
+    padding:8px;
+    margin-bottom:15px;
+    border:1px solid #999;
+    border-radius:4px;
+}
+
+button{
+    padding:8px 20px;
+    background:#d3d3d3;
+    border:1px solid #999;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#bfbfbf;
+}
+
+#result{
+    margin-top:20px;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Try - Catch Example</h2>
+
+    <input type="text" id="numberInput" placeholder="Enter a positive number">
+    <br>
+    <button onclick="checkNumber()">Check</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+function checkNumber() {
+    let result = document.getElementById("result");
+    result.innerHTML = "";
+
+    try {
+        let value = document.getElementById("numberInput").value;
+
+        if (value === "") {
+            throw "Input cannot be empty!";
+        }
+
+        if (isNaN(value)) {
+            throw "Please enter a valid number!";
+        }
+
+        if (Number(value) < 0) {
+            throw "Number must be positive!";
+        }
+
+        result.style.color = "green";
+        result.innerHTML = "Valid number: " + value;
+
+    } catch (error) {
+        result.style.color = "red";
+        result.innerHTML = error;
+
+    } finally {
+        console.log("Execution completed");
+    }
+}
+</script>
+
+</body>
+</html>

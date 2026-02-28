@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Function Types</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="homePage">
+        <h1>Types of JavaScript Functions</h1>
+
+        <button class="btn arrow-btn" onclick="showMessage('arrow')">
+            ➜ Arrow Function
+        </button>
+
+        <button class="btn param-btn" onclick="showMessage('parameter')">
+            📌 Parameter & Argument
+        </button>
+
+        <button class="btn return-btn" onclick="showMessage('return')">
+            🔄 Return Keyword
+        </button>
+
+        <button class="btn anon-btn" onclick="showMessage('anonymous')">
+            👤 Anonymous Function
+        </button>
+
+        <button class="btn callback-btn" onclick="showMessage('callback')">
+            🔁 Callback Function
+        </button>
+    </div>
+
+    <div id="messagePage" style="display: none;">
+        <h1>Function Explanation</h1>
+        <p id="output"></p>
+        <button class="btn back-btn" onclick="goBack()">⬅ Go Back</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
